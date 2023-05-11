@@ -34,9 +34,6 @@ public class Order {
     public void onPostPersist() {
         MenuOrdered menuOrdered = new MenuOrdered(this);
         menuOrdered.publishAfterCommit();
-
-        PayCompleted payCompleted = new PayCompleted(this);
-        payCompleted.publishAfterCommit();
     }
 
     @PreRemove
@@ -205,18 +202,17 @@ public class Order {
         payCompleted.publishAfterCommit();
         */
 
-        /** Example 2:  finding and process
+        /** Example 2:  finding and process */
         
-        repository().findById(menuPaid.get???()).ifPresent(order->{
+        repository().findById(menuPaid.getOrderId()).ifPresent(order->{
             
-            order // do something
+            order.setOrderStatus("결제완료"); // do something
             repository().save(order);
 
             PayCompleted payCompleted = new PayCompleted(order);
             payCompleted.publishAfterCommit();
 
          });
-        */
 
     }
 }

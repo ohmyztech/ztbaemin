@@ -60,11 +60,18 @@ public class Cooking {
     }
 
     public static void loadOrderInfo(PayCompleted payCompleted) {
-        /** Example 1:  new item 
+        /** Example 1:  new item */
         Cooking cooking = new Cooking();
-        repository().save(cooking);
 
-        */
+        cooking.setCustomerAddr(payCompleted.getUserAddr());
+        cooking.setCustomerId(payCompleted.getUserId());
+        cooking.setCustomerTel(payCompleted.getUserTel());
+        cooking.setMenuId(payCompleted.getMenuId());
+        cooking.setMenuQty(payCompleted.getMenuQty());
+        cooking.setOrderId(payCompleted.getId());
+        cooking.setOrderStat("결제완료");
+        
+        repository().save(cooking);
 
         /** Example 2:  finding and process
         

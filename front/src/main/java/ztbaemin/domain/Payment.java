@@ -22,8 +22,8 @@ public class Payment {
 
     @PostPersist
     public void onPostPersist() {
-        MenuPaid menuPaid = new MenuPaid(this);
-        menuPaid.publishAfterCommit();
+        //MenuPaid menuPaid = new MenuPaid(this);
+        //menuPaid.publishAfterCommit();
     }
 
     public static PaymentRepository repository() {
@@ -34,13 +34,16 @@ public class Payment {
     }
 
     public static void payMenu(MenuOrdered menuOrdered) {
-        /** Example 1:  new item 
+        /** Example 1:  new item */
         Payment payment = new Payment();
+        payment.setOrderId(menuOrdered.getId());
+        payment.setOrderStatus("결제완료");
+
         repository().save(payment);
 
         MenuPaid menuPaid = new MenuPaid(payment);
         menuPaid.publishAfterCommit();
-        */
+
 
         /** Example 2:  finding and process
         
