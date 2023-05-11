@@ -69,7 +69,7 @@ public class DashboardViewHandler {
             );
             for (Dashboard dashboard : dashboardList) {
                 // view 객체에 이벤트의 eventDirectValue 를 set 함
-                dashboard.setOrderId("주문취소");
+                dashboard.setOrderStatus("주문취소");
                 // view 레파지 토리에 save
                 dashboardRepository.save(dashboard);
             }
