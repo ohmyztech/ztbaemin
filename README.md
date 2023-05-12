@@ -24,7 +24,7 @@
 ## 4-1.주문
 ![image](https://github.com/ohmyztech/ztbaemin/assets/130043253/99d15a3b-3726-4a22-a4f6-7900c1fb584d)
 
-## 4-2.주문수락
+## 4-2.주문확인
 ![image](https://github.com/ohmyztech/ztbaemin/assets/130043253/4f3b085f-6767-44a0-ae59-55acceaf6821)
 
 ## 4-3.카프카
